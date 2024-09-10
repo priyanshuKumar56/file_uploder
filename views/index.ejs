@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Uploader</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+      }
+
+      .hero {
+        text-align: center;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #666;
+      }
+
+      .upload-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .file-input {
+        font-size: 1rem;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #00f2fe;
+        border-radius: 5px;
+        outline: none;
+        width: 100%;
+        max-width: 300px;
+        background: #fff;
+      }
+
+      .upload-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #00f2fe;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .upload-btn:hover {
+        background-color: #4facfe;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .file-input,
+        .upload-btn {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <h1 class="hero-title">Upload Your Files</h1>
+        <p class="hero-subtitle">Fast, Secure, and Easy</p>
+        <form
+          action="/upload"
+          method="POST"
+          enctype="multipart/form-data"
+          class="upload-form"
+        >
+          <input type="file" name="file" class="file-input" required />
+          <button type="submit" class="upload-btn">Upload</button>
+        </form>
+      </div>
+    </header>
+  </body>
+</html>
